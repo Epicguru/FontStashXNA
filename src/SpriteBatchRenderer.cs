@@ -5,7 +5,7 @@ using System;
 
 namespace FontStashSharp
 {
-	class SpriteBatchRenderer : IFontStashRenderer
+	internal class SpriteBatchRenderer : IFontStashRenderer
 	{
 		public static readonly SpriteBatchRenderer Instance = new SpriteBatchRenderer();
 
