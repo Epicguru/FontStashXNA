@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{8ED83526-FD30-4BA1-90C4-8CE29F53E5FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNA", "..\..\FNA\FNA.csproj", "{35253CE1-C864-4CD3-8249-4D1319748E8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontStashXNA.FNA", "..\src\FontStashXNA.FNA.csproj", "{7A1422A5-B124-49D5-92DE-4B81E6B53DCE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontStashXNA.Samples.DynamicSpriteFont.FNA", "..\samples\FontStashXNA.Samples.DynamicSpriteFont\FontStashXNA.Samples.DynamicSpriteFont.FNA.csproj", "{4924F505-33AD-4583-B15E-071A1688B0AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35253CE1-C864-4CD3-8249-4D1319748E8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1422A5-B124-49D5-92DE-4B81E6B53DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1422A5-B124-49D5-92DE-4B81E6B53DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1422A5-B124-49D5-92DE-4B81E6B53DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1422A5-B124-49D5-92DE-4B81E6B53DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4924F505-33AD-4583-B15E-071A1688B0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4924F505-33AD-4583-B15E-071A1688B0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4924F505-33AD-4583-B15E-071A1688B0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4924F505-33AD-4583-B15E-071A1688B0AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4924F505-33AD-4583-B15E-071A1688B0AA} = {8ED83526-FD30-4BA1-90C4-8CE29F53E5FB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9C9D369-EE58-4E9D-B9FE-63023B644741}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <Authors>FontStashXNATeam</Authors>
+    <Product>FontStashXNA</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/rds1983/FontStashXNA</PackageProjectUrl>
+    <RootNamespace>FontStashSharp</RootNamespace>
+    <Version>0.8.5.0</Version>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{99076AAC-3723-4B2E-A74B-4772FAE8DD6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontStashXNA.MonoGame", "..\src\FontStashXNA.MonoGame.csproj", "{1419500C-253A-46B0-B1DA-175F0CFE9564}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontStashXNA.Samples.DynamicSpriteFont.MonoGame", "..\samples\FontStashXNA.Samples.DynamicSpriteFont\FontStashXNA.Samples.DynamicSpriteFont.MonoGame.csproj", "{D35302CD-65C9-416A-BD72-0089853D8F92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontStashXNA.Samples.TextureAtlasFull", "..\samples\FontStashXNA.Samples.TextureAtlasFull\FontStashXNA.Samples.TextureAtlasFull.csproj", "{9C0E3957-BCBE-4A90-A4C6-19AD6076A39A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1419500C-253A-46B0-B1DA-175F0CFE9564}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1419500C-253A-46B0-B1DA-175F0CFE9564}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1419500C-253A-46B0-B1DA-175F0CFE9564}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1419500C-253A-46B0-B1DA-175F0CFE9564}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35302CD-65C9-416A-BD72-0089853D8F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35302CD-65C9-416A-BD72-0089853D8F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35302CD-65C9-416A-BD72-0089853D8F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35302CD-65C9-416A-BD72-0089853D8F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0E3957-BCBE-4A90-A4C6-19AD6076A39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0E3957-BCBE-4A90-A4C6-19AD6076A39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0E3957-BCBE-4A90-A4C6-19AD6076A39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0E3957-BCBE-4A90-A4C6-19AD6076A39A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D35302CD-65C9-416A-BD72-0089853D8F92} = {99076AAC-3723-4B2E-A74B-4772FAE8DD6A}
+		{9C0E3957-BCBE-4A90-A4C6-19AD6076A39A} = {99076AAC-3723-4B2E-A74B-4772FAE8DD6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35ACDF4E-2CE2-46B1-A19F-35DC131069A1}
+	EndGlobalSection
+EndGlobal
