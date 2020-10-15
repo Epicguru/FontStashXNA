@@ -46,7 +46,7 @@ Following code creates FontSystem from 3 different ttfs:
     }
 ```
 
-Now the text could be drawn using following code:
+Now the text could be drawn from the characters of all these ttfs using following code:
 ```c#
     protected override void Draw(GameTime gameTime)
     {
