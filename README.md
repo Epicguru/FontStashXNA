@@ -23,3 +23,46 @@ There are two ways of referencing FontStashXNAs in the project:
     c. Add src/FontStashXNA.MonoGame.csproj or src/FontStashXNA.FNA.csproj to the solution.
 
       * If FNA is used, then the folder structure is expected to be following: ![Folder Structure](/images/FolderStructure.png)
+      
+# Usage
+Following code creates FontSystem from 3 different ttfs:
+```c#
+    private SpriteBatch _spriteBatch; 
+    private FontSystem _fontSystem;
+
+    /// <summary>
+    /// LoadContent will be called once per game and is the place to load
+    /// all of your content.
+    /// </summary>
+    protected override void LoadContent()
+    {
+        // Create a new SpriteBatch, which can be used to draw textures.
+        _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+        _fontSystem = FontSystemFactory.Create(GraphicsDevice, 1024, 1024);
+        _fontSystem.AddFont(File.ReadAllBytes(@"Fonts/DroidSans.ttf"));
+        _fontSystem.AddFont(File.ReadAllBytes(@"Fonts/DroidSansJapanese.ttf"));
+        _fontSystem.AddFont(File.ReadAllBytes(@"Fonts/Symbola-Emoji.ttf"));
+    }
+```
+
+Now the text could be drawn using following code:
+```c#
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.CornflowerBlue);
+
+        // Render some text
+        _spriteBatch.Begin();
+
+        DynamicSpriteFont font18 = _fontSystem.GetFont(18);
+        _spriteBatch.DrawString(font18, "The quick いろは brown\nfox にほへ jumps over\nt🙌h📦e l👏a👏zy dog", new Vector2(0, 0), Color.White);
+
+        DynamicSpriteFont font30 = _fontSystem.GetFont(30);
+        _spriteBatch.DrawString(font30, "The quick いろは brown\nfox にほへ jumps over\nt🙌h📦e l👏a👏zy dog", new Vector2(0, 80), Color.Yellow);
+
+        _spriteBatch.End();
+
+        base.Draw(gameTime);
+    }
+```
