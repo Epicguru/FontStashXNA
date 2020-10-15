@@ -44,7 +44,8 @@ namespace SpriteFontPlus.Samples.TextureAtlasFull
 			_spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			// TODO: use this.Content to load your game content here
-			_fontSystem = FontSystemFactory.Create(GraphicsDevice, File.ReadAllBytes(@"Fonts/DroidSans.ttf"), AtlasSize, AtlasSize);
+			_fontSystem = FontSystemFactory.Create(GraphicsDevice, AtlasSize, AtlasSize);
+			_fontSystem.AddFont(File.ReadAllBytes(@"Fonts/DroidSans.ttf"));
 
 			_white = new Texture2D(GraphicsDevice, 1, 1);
 			_white.SetData(new[] { Color.White });
