@@ -66,3 +66,65 @@ Now the text could be drawn using following code:
         base.Draw(gameTime);
     }
 ```
+
+It would render following:
+![](/images/screenshot1.png)
+
+If you want to draw a colored text, then pass array of colors(a color for every rendered character).
+I.e.
+```c#
+    private static readonly Color[] ColoredTextColors = new Color[]
+    {
+        Color.Red,
+        Color.Blue,
+        Color.Green,
+        Color.Aquamarine,
+        Color.Azure,
+        Color.Chartreuse,
+        Color.Lavender,
+        Color.OldLace,
+        Color.PaleGreen,
+        Color.SaddleBrown,
+        Color.IndianRed,
+        Color.ForestGreen,
+        Color.Khaki
+    };
+
+    /// <summary>
+    /// This is called when the game should draw itself.
+    /// </summary>
+    /// <param name="gameTime">Provides a snapshot of timing values.</param>
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.CornflowerBlue);
+
+        // Render some text
+        _spriteBatch.Begin();
+
+        DynamicSpriteFont font30 = _fontSystem.GetFont(30);
+        _spriteBatch.DrawString(font30, "Colored Text", Vector2.Zero, ColoredTextColors);
+
+        _spriteBatch.End();
+
+        base.Draw(gameTime);
+    }
+```
+
+It would render following:
+![](/images/screenshot2.png)
+
+If you want to draw blurry text, specify blur amount during the creation of the font system:
+```c#
+    _fontSystem = FontSystemFactory.Create(GraphicsDevice, 1024, 1024, 2);
+```
+It would render following:
+![](/images/screenshot3.png)
+
+Similarly stroke amount could be specified:
+```c#
+    _fontSystem = FontSystemFactory.Create(GraphicsDevice, 1024, 1024, 0, 1);
+```
+
+It would render following:
+![](/images/screenshot4.png)
+
