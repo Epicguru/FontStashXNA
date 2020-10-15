@@ -1,4 +1,4 @@
-# FontStashXNA
+## FontStashXNA
 [![NuGet](https://img.shields.io/nuget/v/FontStashXNA.MonoGame.svg)](https://www.nuget.org/packages/FontStashXNA.MonoGame/) 
 [![Chat](https://img.shields.io/discord/628186029488340992.svg)](https://discord.gg/ZeHxhCY)
 
@@ -11,7 +11,7 @@ Or - in other words - it is the text rendering library with following features:
 * Colored text
 * Blurry and stroked text
 
-# Adding Reference
+## Adding Reference
 There are two ways of referencing FontStashXNAs in the project:
 1. Through nuget(works only for MonoGame): https://www.nuget.org/packages/FontStashXNA.MonoGame/
 2. As source code(works for both MonoGame and FNA):
@@ -24,7 +24,7 @@ There are two ways of referencing FontStashXNAs in the project:
 
       * If FNA is used, then the folder structure is expected to be following: ![Folder Structure](/images/FolderStructure.png)
       
-# Usage
+## Usage
 Following code creates FontSystem from 3 different ttfs:
 ```c#
     private SpriteBatch _spriteBatch; 
@@ -128,3 +128,14 @@ Similarly stroke amount could be specified:
 It would render following:
 ![](/images/screenshot4.png)
 
+## Building From Source Code
+1. Clone this repo.
+2. `git submodule update --init --recursive`
+3. Open a solution from the "build" folder.
+
+## Credits
+* [MonoGame](http://www.monogame.net/)
+* [FNA](https://github.com/FNA-XNA/FNA)
+* [stb](https://github.com/nothings/stb)
+* [fontstash](https://github.com/memononen/fontstash)
+* [bartwe's fork of SpriteFontPlus](https://github.com/bartwe/SpriteFontPlus)
