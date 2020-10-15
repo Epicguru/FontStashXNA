@@ -129,7 +129,7 @@ Similarly stroke amount could be specified:
 It would render following:
 ![](/images/screenshot4.png)
 
-It is possible to provide custom renderer by implementing interface [IFontStashRenderer](https://github.com/rds1983/FontStashSharp/blob/main/src/FontStashSharp/Interfaces/IFontStashRenderer.cs) and providing it to DynamicSpriteFont.DrawText method.
+It is possible to provide custom renderer by implementing interface [IFontStashRenderer](https://github.com/rds1983/FontStashSharp/blob/main/src/FontStashSharp/Interfaces/IFontStashRenderer.cs) and providing the implementation to DynamicSpriteFont.DrawText.
 
 ## Building From Source Code
 1. Clone this repo.
