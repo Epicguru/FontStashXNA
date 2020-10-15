@@ -57,7 +57,8 @@ namespace SpriteFontPlus.Samples.TtfBaking
 
 		private FontSystem LoadFont(int blurAmount, int strokeAmount)
 		{
-			var result = FontSystemFactory.Create(GraphicsDevice, File.ReadAllBytes(@"Fonts/DroidSans.ttf"), 1024, 1024, blurAmount, strokeAmount);
+			var result = FontSystemFactory.Create(GraphicsDevice, 1024, 1024, blurAmount, strokeAmount);
+			result.AddFont(File.ReadAllBytes(@"Fonts/DroidSans.ttf"));
 			result.AddFont(File.ReadAllBytes(@"Fonts/DroidSansJapanese.ttf"));
 			result.AddFont(File.ReadAllBytes(@"Fonts/Symbola-Emoji.ttf"));
 

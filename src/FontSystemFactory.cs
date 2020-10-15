@@ -36,11 +36,10 @@ namespace FontStashSharp
 			return new TextureEnumerator(fontSystem);
 		}
 
-		public static FontSystem Create(GraphicsDevice graphicsDevice, byte[] ttf,  int textureWidth, int textureHeight, int blurAmount = 0, int strokeAmount = 0)
+		public static FontSystem Create(GraphicsDevice graphicsDevice, int textureWidth, int textureHeight, int blurAmount = 0, int strokeAmount = 0)
 		{
 			var textureCreator = new Texture2DCreator(graphicsDevice);
 			var result = new FontSystem(StbTrueTypeSharpFontLoader.Instance, textureCreator, textureWidth, textureHeight, blurAmount, strokeAmount);
-			result.AddFont(ttf);
 
 			return result;
 		}
