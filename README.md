@@ -1,5 +1,5 @@
 # FontStashXNA
-[![NuGet](https://img.shields.io/nuget/v/FontStashXNA.svg)](https://www.nuget.org/packages/FontStashXNA/) 
+[![NuGet](https://img.shields.io/nuget/v/FontStashXNA.MonoGame.svg)](https://www.nuget.org/packages/FontStashXNA.MonoGame/) 
 [![Chat](https://img.shields.io/discord/628186029488340992.svg)](https://discord.gg/ZeHxhCY)
 
 FontStashXNA is [FontStashSharp](https://github.com/rds1983/FontStashSharp) for MonoGame and FNA.
