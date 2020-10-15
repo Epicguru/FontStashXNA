@@ -10,6 +10,7 @@ Or - in other words - it is the text rendering library with following features:
 * It's possible to have multiple ttf fonts per one FontSystem(i.e. one ttf with Latin characters, second with Japanese characters and third with emojis)
 * Colored text
 * Blurry and stroked text
+* Possibility to use custom renderer
 
 ## Adding Reference
 There are two ways of referencing FontStashXNAs in the project:
@@ -127,6 +128,8 @@ Similarly stroke amount could be specified:
 
 It would render following:
 ![](/images/screenshot4.png)
+
+It is possible to provide custom renderer by implementing interface [IFontStashRenderer](https://github.com/rds1983/FontStashSharp/blob/main/src/FontStashSharp/Interfaces/IFontStashRenderer.cs) and providing it to DynamicSpriteFont.DrawText method.
 
 ## Building From Source Code
 1. Clone this repo.
