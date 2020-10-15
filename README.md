@@ -10,7 +10,7 @@ Or - in other words - it is the text rendering library with following features:
 * It's possible to have multiple ttf fonts per one FontSystem(i.e. one ttf with Latin characters, second with Japanese characters and third with emojis)
 * Colored text
 * Blurry and stroked text
-* Possibility to use custom renderer
+* Possibility to use custom renderer instead of SpriteBatch
 
 ## Adding Reference
 There are two ways of referencing FontStashXNAs in the project:
