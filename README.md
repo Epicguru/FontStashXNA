@@ -13,7 +13,7 @@ Or - in other words - it is the text rendering library with following features:
 * Possibility to use custom renderer instead of SpriteBatch
 
 ## Adding Reference
-There are two ways of referencing FontStashXNAs in the project:
+There are two ways of referencing FontStashXNA in the project:
 1. Through nuget(works only for MonoGame): https://www.nuget.org/packages/FontStashXNA.MonoGame/
 2. As source code(works for both MonoGame and FNA):
     
@@ -67,7 +67,6 @@ Now the text could be drawn from the characters of all these ttfs using followin
         base.Draw(gameTime);
     }
 ```
-
 It would render following:
 ![](/images/screenshot1.png)
 
@@ -110,7 +109,6 @@ I.e.
         base.Draw(gameTime);
     }
 ```
-
 It would render following:
 ![](/images/screenshot2.png)
 
@@ -125,7 +123,6 @@ Similarly stroke amount could be specified:
 ```c#
     _fontSystem = FontSystemFactory.Create(GraphicsDevice, 1024, 1024, 0, 1);
 ```
-
 It would render following:
 ![](/images/screenshot4.png)
 
