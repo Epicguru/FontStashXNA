@@ -26,7 +26,7 @@ There are two ways of referencing FontStashXNA in the project:
       * If FNA is used, then the folder structure is expected to be following: ![Folder Structure](/images/FolderStructure.png)
       
 ## Usage
-Following code creates FontSystem from 3 different ttfs:
+Following code creates FontSystem from 3 different ttfs and sets atlas size to 1024x1024:
 ```c#
     private SpriteBatch _spriteBatch; 
     private FontSystem _fontSystem;
