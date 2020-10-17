@@ -55,14 +55,11 @@ namespace SpriteFontPlus.Samples.TtfBaking
 			Window.AllowUserResizing = true;
 		}
 
-		private FontSystem LoadFont(int blurAmount, int strokeAmount)
+		private void LoadFontSystem(FontSystem result)
 		{
-			var result = FontSystemFactory.Create(GraphicsDevice, 1024, 1024, blurAmount, strokeAmount);
 			result.AddFont(File.ReadAllBytes(@"Fonts/DroidSans.ttf"));
 			result.AddFont(File.ReadAllBytes(@"Fonts/DroidSansJapanese.ttf"));
 			result.AddFont(File.ReadAllBytes(@"Fonts/Symbola-Emoji.ttf"));
-
-			return result;
 		}
 
 		/// <summary>
@@ -75,18 +72,24 @@ namespace SpriteFontPlus.Samples.TtfBaking
 			_spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			// TODO: use this.Content to load your game content here
-			var fonts = new List<FontSystem>();
+			var fontSystems = new List<FontSystem>();
 
-			// Simple font
-			fonts.Add(LoadFont(0, 0));
+			// Simple
+			var fontSystem = FontSystemFactory.Create(GraphicsDevice, 1024, 1024);
+			LoadFontSystem(fontSystem);
+			fontSystems.Add(fontSystem);
 
-			// Blurry font
-			fonts.Add(LoadFont(EffectAmount, 0));
+			// Blurry
+			var blurryFontSystem = FontSystemFactory.CreateBlurry(GraphicsDevice, 1024, 1024, EffectAmount);
+			LoadFontSystem(blurryFontSystem);
+			fontSystems.Add(blurryFontSystem);
 
-			// Stroked font
-			fonts.Add(LoadFont(0, EffectAmount));
+			// Stroked
+			var strokedFontSystem = FontSystemFactory.CreateStroked(GraphicsDevice, 1024, 1024, EffectAmount);
+			LoadFontSystem(strokedFontSystem);
+			fontSystems.Add(strokedFontSystem);
 
-			_fontSystems = fonts.ToArray();
+			_fontSystems = fontSystems.ToArray();
 			_currentFontSystem = _fontSystems[0];
 
 			_white = new Texture2D(GraphicsDevice, 1, 1);
