@@ -5,6 +5,7 @@
     <StartupObject />
     <TargetFramework>net45</TargetFramework>
     <OutputPath>bin\FNA\$(Configuration)</OutputPath>
+    <DefineConstants>$(DefineConstants);FNA</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\FontStashXNA.FNA.csproj" />

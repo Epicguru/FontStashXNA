@@ -1,6 +1,12 @@
+using System.Text;
+
+#if MONOGAME || FNA
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Text;
+#elif STRIDE
+using Stride.Core.Mathematics;
+using Stride.Graphics;
+#endif
 
 namespace FontStashSharp
 {

@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using System.IO;
+﻿using System.IO;
 
 namespace FontStashSharp
 {

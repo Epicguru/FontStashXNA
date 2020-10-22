@@ -3,12 +3,13 @@
     <OutputType>WinExe</OutputType>
     <ApplicationIcon />
     <StartupObject />
-    <TargetFramework>net45</TargetFramework>
-    <OutputPath>bin\FNA.Core\$(Configuration)</OutputPath>
-    <DefineConstants>$(DefineConstants);FNA</DefineConstants>
+    <TargetFramework>net462</TargetFramework>
+    <OutputPath>bin\Stride\$(Configuration)</OutputPath>
+    <DefineConstants>$(DefineConstants);STRIDE</DefineConstants>
   </PropertyGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\..\src\FontStashXNA.FNA.Core.csproj" />
+    <ProjectReference Include="..\..\src\FontStashXNA.Stride.csproj" />
   </ItemGroup>  
 
   <ItemGroup>

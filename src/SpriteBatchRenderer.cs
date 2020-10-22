@@ -1,7 +1,14 @@
 ﻿using FontStashSharp.Interfaces;
+using System;
+
+#if MONOGAME || FNA
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
+#elif STRIDE
+using Stride.Core.Mathematics;
+using Stride.Graphics;
+using Texture2D = Stride.Graphics.Texture;
+#endif
 
 namespace FontStashSharp
 {
@@ -37,14 +44,26 @@ namespace FontStashSharp
 		{
 			var textureWrapper = (Texture2DWrapper)texture;
 
+#if MONOGAME || FNA
 			_batch.Draw(textureWrapper.Texture,
 				dest,
 				source,
 				color,
 				0f,
-				Microsoft.Xna.Framework.Vector2.Zero,
+				Vector2.Zero,
 				SpriteEffects.None,
 				depth);
+#elif STRIDE
+			_batch.Draw(textureWrapper.Texture,
+				dest,
+				source,
+				color,
+				0f,
+				Vector2.Zero,
+				SpriteEffects.None,
+				ImageOrientation.AsIs,
+				depth);
+#endif
 		}
 	}
 }

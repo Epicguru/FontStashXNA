@@ -1,6 +1,12 @@
 ﻿using FontStashSharp.Interfaces;
-using Microsoft.Xna.Framework.Graphics;
 using System;
+
+#if MONOGAME || FNA
+using Microsoft.Xna.Framework.Graphics;
+#elif STRIDE
+using Stride.Graphics;
+using Texture2D = Stride.Graphics.Texture;
+#endif
 
 namespace FontStashSharp
 {
@@ -20,7 +26,12 @@ namespace FontStashSharp
 
 		public ITexture2D Create(int width, int height)
 		{
+#if MONOGAME || FNA
 			var texture2d = new Texture2D(_device, width, height);
+#elif STRIDE
+			var texture2d = Texture2D.New2D(_device, width, height, false, PixelFormat.R8G8B8A8_UNorm_SRgb, TextureFlags.ShaderResource);
+#endif
+
 			return new Texture2DWrapper(texture2d);
 		}
 	}

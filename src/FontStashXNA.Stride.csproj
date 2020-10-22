@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackageId>FontStashXNA.Stride</PackageId>
+    <AssemblyName>FontStashXNA.Stride</AssemblyName>
+    <Description>FontStashSharp for Stride</Description>
+    <DefineConstants>TRACE;STBSHARP_INTERNAL;STRIDE;PREMULTIPLIEDALPHA</DefineConstants>
+    <OutputPath>bin\Stride\$(Configuration)</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
+  <ItemGroup>
+	<PackageReference Include="Stride.Engine" Version="4.0.0.1-beta04-1265" />
+	<PackageReference Include="Stride.Core" Version="4.0.0.1-beta04-1265" />
+  </ItemGroup>  
+
+  <ItemGroup>
+    <Compile Include="..\deps\FontStashSharp\deps\StbTrueTypeSharp\src\**\*.cs" LinkBase="StbTrueTypeSharp" />
+    <Compile Include="..\deps\FontStashSharp\src\FontStashSharp\**\*.cs" LinkBase="FontStashSharp" />
+    <Compile Remove="..\deps\FontStashSharp\src\FontStashSharp\obj\**\*.cs" LinkBase="FontStashSharp" />
+    <Compile Include="..\deps\FontStashSharp\src\FontStashSharp.StbTrueTypeSharp\**\*.cs" LinkBase="FontStashSharp.StbTrueTypeSharp" />
+    <Compile Remove="..\deps\FontStashSharp\src\FontStashSharp.StbTrueTypeSharp\obj\**\*.cs" LinkBase="FontStashSharp.StbTrueTypeSharp" />
+    <Compile Include="..\deps\BMFontToSpriteFont\**\*.cs" LinkBase="BMFontToSpriteFont" />
+  </ItemGroup>
+</Project>

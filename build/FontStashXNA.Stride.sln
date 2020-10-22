@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{99076AAC-3723-4B2E-A74B-4772FAE8DD6A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontStashXNA.Samples.DynamicSpriteFont.Stride", "..\samples\FontStashXNA.Samples.DynamicSpriteFont\FontStashXNA.Samples.DynamicSpriteFont.Stride.csproj", "{A60DB8EA-CF5E-4F6C-9B6A-F73AF8B5A949}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontStashXNA.Stride", "..\src\FontStashXNA.Stride.csproj", "{414428D9-27E0-427D-978B-A477D71C07AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A60DB8EA-CF5E-4F6C-9B6A-F73AF8B5A949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60DB8EA-CF5E-4F6C-9B6A-F73AF8B5A949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60DB8EA-CF5E-4F6C-9B6A-F73AF8B5A949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60DB8EA-CF5E-4F6C-9B6A-F73AF8B5A949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414428D9-27E0-427D-978B-A477D71C07AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414428D9-27E0-427D-978B-A477D71C07AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414428D9-27E0-427D-978B-A477D71C07AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414428D9-27E0-427D-978B-A477D71C07AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A60DB8EA-CF5E-4F6C-9B6A-F73AF8B5A949} = {99076AAC-3723-4B2E-A74B-4772FAE8DD6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35ACDF4E-2CE2-46B1-A19F-35DC131069A1}
+	EndGlobalSection
+EndGlobal

@@ -1,6 +1,11 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+
+#if MONOGAME || FNA
+using Microsoft.Xna.Framework.Graphics;
+#elif STRIDE
+using Texture2D = Stride.Graphics.Texture;
+#endif
 
 namespace FontStashSharp
 {

@@ -3,9 +3,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using FontStashSharp;
+
+#if MONOGAME || FNA
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+#if ANDROID
+using System;
+using Microsoft.Xna.Framework.GamerServices;
+#endif
+#elif STRIDE
+using System.Threading.Tasks;
+using Stride.Engine;
+using Stride.Games;
+using Stride.Graphics;
+using Stride.Core.Mathematics;
+using Stride.Input;
+using Texture2D = Stride.Graphics.Texture;
+using SharpDX.Direct3D11;
+#endif
 
 namespace SpriteFontPlus.Samples.TtfBaking
 {
@@ -16,8 +32,13 @@ namespace SpriteFontPlus.Samples.TtfBaking
 	{
 		private const int EffectAmount = 1;
 
-		GraphicsDeviceManager _graphics;
-		SpriteBatch _spriteBatch;
+#if !STRIDE
+		private readonly GraphicsDeviceManager _graphics;
+#endif
+
+		public static Game1 Instance { get; private set; }
+		
+		private SpriteBatch _spriteBatch;
 		private FontSystem _currentFontSystem;
 		private FontSystem[] _fontSystems;
 		private DynamicSpriteFont _font;
@@ -44,15 +65,23 @@ namespace SpriteFontPlus.Samples.TtfBaking
 
 		public Game1()
 		{
+			Instance = this;
+
+#if MONOGAME || FNA
 			_graphics = new GraphicsDeviceManager(this)
 			{
 				PreferredBackBufferWidth = 1200,
 				PreferredBackBufferHeight = 800
 			};
 
-			Content.RootDirectory = "Content";
-			IsMouseVisible = true;
 			Window.AllowUserResizing = true;
+#elif STRIDE
+			GraphicsDeviceManager.PreferredBackBufferWidth = 1200;
+			GraphicsDeviceManager.PreferredBackBufferHeight = 1200;
+			GraphicsDeviceManager.PreferredBackBufferFormat = PixelFormat.R8G8B8A8_UNorm_SRgb;
+#endif
+
+			IsMouseVisible = true;
 		}
 
 		private void LoadFontSystem(FontSystem result)
@@ -66,7 +95,11 @@ namespace SpriteFontPlus.Samples.TtfBaking
 		/// LoadContent will be called once per game and is the place to load
 		/// all of your content.
 		/// </summary>
+#if !STRIDE
 		protected override void LoadContent()
+#else
+		protected override Task LoadContent()
+#endif
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
 			_spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -92,10 +125,19 @@ namespace SpriteFontPlus.Samples.TtfBaking
 			_fontSystems = fontSystems.ToArray();
 			_currentFontSystem = _fontSystems[0];
 
+#if MONOGAME || FNA
 			_white = new Texture2D(GraphicsDevice, 1, 1);
 			_white.SetData(new[] { Color.White });
+#elif STRIDE
+			_white = Texture2D.New2D(GraphicsDevice, 1, 1, false, PixelFormat.R8G8B8A8_UNorm_SRgb, TextureFlags.ShaderResource);
+			_white.SetData(GraphicsContext.CommandList, new[] { Color.White } );
+#endif
 
 			GC.Collect();
+
+#if STRIDE
+			return base.LoadContent();
+#endif
 		}
 
 		protected override void Update(GameTime gameTime)
@@ -172,10 +214,23 @@ namespace SpriteFontPlus.Samples.TtfBaking
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw(GameTime gameTime)
 		{
-			GraphicsDevice.Clear(Color.CornflowerBlue);
+#if MONOGAME || FNA
+			GraphicsDevice.Clear(new Color(0xffed9564));
+#elif STRIDE
+			// Clear screen
+			GraphicsContext.CommandList.Clear(GraphicsDevice.Presenter.BackBuffer, new Color(0xffed9564));
+			GraphicsContext.CommandList.Clear(GraphicsDevice.Presenter.DepthStencilBuffer, DepthStencilClearOptions.DepthBuffer | DepthStencilClearOptions.Stencil);
+
+			// Set render target
+			GraphicsContext.CommandList.SetRenderTargetAndViewport(GraphicsDevice.Presenter.DepthStencilBuffer, GraphicsDevice.Presenter.BackBuffer);
+#endif
 
 			// TODO: Add your drawing code here
+#if MONOGAME || FNA
 			_spriteBatch.Begin();
+#elif STRIDE
+			_spriteBatch.Begin(GraphicsContext, SpriteSortMode.Deferred, BlendStates.AlphaBlend, GraphicsDevice.SamplerStates.PointClamp);
+#endif
 
 			// Render some text
 			_font = _currentFontSystem.GetFont(18);
