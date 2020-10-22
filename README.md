@@ -14,7 +14,9 @@ Or - in other words - it is the text rendering library with following features:
 
 ## Adding Reference
 There are two ways of referencing FontStashXNA in the project:
-1. Through nuget(works only for MonoGame and Stride): [![MonoGame](https://img.shields.io/nuget/v/FontStashXNA.MonoGame.svg)](https://www.nuget.org/packages/FontStashXNA.MonoGame/) [![Stride](https://img.shields.io/nuget/v/FontStashXNA.Stride.svg)](https://www.nuget.org/packages/FontStashXNA.Stride/) 
+1. Through nuget(works only for MonoGame and Stride): 
+    * https://www.nuget.org/packages/FontStashXNA.MonoGame/
+    * https://www.nuget.org/packages/FontStashXNA.Stride/
 2. As source code(works for all supported engines):
     
     a. Clone this repo.
