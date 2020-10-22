@@ -75,14 +75,21 @@ namespace SpriteFontPlus.Samples.TtfBaking
 			};
 
 			Window.AllowUserResizing = true;
-#elif STRIDE
-			GraphicsDeviceManager.PreferredBackBufferWidth = 1200;
-			GraphicsDeviceManager.PreferredBackBufferHeight = 1200;
-			GraphicsDeviceManager.PreferredBackBufferFormat = PixelFormat.R8G8B8A8_UNorm_SRgb;
 #endif
 
 			IsMouseVisible = true;
 		}
+
+#if STRIDE
+		public override void ConfirmRenderingSettings(bool gameCreation)
+		{
+			base.ConfirmRenderingSettings(gameCreation);
+
+			GraphicsDeviceManager.PreferredBackBufferWidth = 1200;
+			GraphicsDeviceManager.PreferredBackBufferHeight = 800;
+			GraphicsDeviceManager.PreferredColorSpace = ColorSpace.Gamma;
+		}
+#endif
 
 		private void LoadFontSystem(FontSystem result)
 		{
@@ -215,10 +222,10 @@ namespace SpriteFontPlus.Samples.TtfBaking
 		protected override void Draw(GameTime gameTime)
 		{
 #if MONOGAME || FNA
-			GraphicsDevice.Clear(new Color(0xffed9564));
+			GraphicsDevice.Clear(Color.CornflowerBlue);
 #elif STRIDE
 			// Clear screen
-			GraphicsContext.CommandList.Clear(GraphicsDevice.Presenter.BackBuffer, new Color(0xffed9564));
+			GraphicsContext.CommandList.Clear(GraphicsDevice.Presenter.BackBuffer, Color.CornflowerBlue);
 			GraphicsContext.CommandList.Clear(GraphicsDevice.Presenter.DepthStencilBuffer, DepthStencilClearOptions.DepthBuffer | DepthStencilClearOptions.Stencil);
 
 			// Set render target
@@ -229,7 +236,7 @@ namespace SpriteFontPlus.Samples.TtfBaking
 #if MONOGAME || FNA
 			_spriteBatch.Begin();
 #elif STRIDE
-			_spriteBatch.Begin(GraphicsContext, SpriteSortMode.Deferred, BlendStates.AlphaBlend, GraphicsDevice.SamplerStates.PointClamp);
+			_spriteBatch.Begin(GraphicsContext);
 #endif
 
 			// Render some text

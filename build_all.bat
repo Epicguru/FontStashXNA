@@ -1,5 +1,6 @@
 dotnet --version
 dotnet build build\FontStashXNA.Monogame.sln /p:Configuration=Release --no-incremental
+dotnet build build\FontStashXNA.Stride.sln /p:Configuration=Release --no-incremental
 
 call copy_zip_package_files.bat
 rename "ZipPackage" "FontStashXNA.%APPVEYOR_BUILD_VERSION%"

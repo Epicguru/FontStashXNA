@@ -29,7 +29,7 @@ namespace FontStashSharp
 #if MONOGAME || FNA
 			var texture2d = new Texture2D(_device, width, height);
 #elif STRIDE
-			var texture2d = Texture2D.New2D(_device, width, height, false, PixelFormat.R8G8B8A8_UNorm_SRgb, TextureFlags.ShaderResource);
+			var texture2d = Texture2D.New2D(_device, width, height, false, PixelFormat.R8G8B8A8_UNorm, TextureFlags.ShaderResource);
 #endif
 
 			return new Texture2DWrapper(texture2d);
