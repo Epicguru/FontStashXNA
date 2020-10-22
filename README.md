@@ -14,14 +14,14 @@ Or - in other words - it is the text rendering library with following features:
 
 ## Adding Reference
 There are two ways of referencing FontStashXNA in the project:
-1. Through nuget(works only for MonoGame): https://www.nuget.org/packages/FontStashXNA.MonoGame/
-2. As source code(works for both MonoGame and FNA):
+1. Through nuget(works only for MonoGame and Stride): [![NuGet](https://img.shields.io/nuget/v/FontStashXNA.MonoGame.svg)](https://www.nuget.org/packages/FontStashXNA.MonoGame/) [![NuGet](https://img.shields.io/nuget/v/FontStashXNA.Stride.svg)](https://www.nuget.org/packages/FontStashXNA.Stride/) 
+2. As source code(works for all supported engines):
     
     a. Clone this repo.
     
     b. Execute `git submodule update --init --recursive` within the folder the repo was cloned to.
     
-    c. Add src/FontStashXNA.MonoGame.csproj or src/FontStashXNA.FNA.csproj to the solution.
+    c. Add src/FontStashXNA.{Engine}.csproj to the solution.
 
       * If FNA is used, then the folder structure is expected to be following: ![Folder Structure](/images/FolderStructure.png)
       
