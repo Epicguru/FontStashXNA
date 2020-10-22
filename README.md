@@ -2,7 +2,7 @@
 [![NuGet](https://img.shields.io/nuget/v/FontStashXNA.MonoGame.svg)](https://www.nuget.org/packages/FontStashXNA.MonoGame/) 
 [![Chat](https://img.shields.io/discord/628186029488340992.svg)](https://discord.gg/ZeHxhCY)
 
-FontStashXNA is [FontStashSharp](https://github.com/rds1983/FontStashSharp) for MonoGame and FNA.
+FontStashXNA is [FontStashSharp](https://github.com/rds1983/FontStashSharp) for [MonoGame](https://www.monogame.net/), [FNA](https://fna-xna.github.io/) and [Stride](https://stride3d.net/).
 
 Or - in other words - it is the text rendering library with following features:
 
@@ -136,6 +136,7 @@ It is possible to provide custom renderer by implementing interface [IFontStashR
 ## Credits
 * [MonoGame](http://www.monogame.net/)
 * [FNA](https://github.com/FNA-XNA/FNA)
+* [Stride](https://stride3d.net/)
 * [stb](https://github.com/nothings/stb)
 * [fontstash](https://github.com/memononen/fontstash)
 * [bartwe's fork of SpriteFontPlus](https://github.com/bartwe/SpriteFontPlus)
